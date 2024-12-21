@@ -1,0 +1,80 @@
+.checkout-card {
+  width: 90%; /* Chiếm 90% chiều rộng màn hình */
+  min-height: 750px;
+  margin: 0 auto; /* Nằm ở giữa */
+  border: none !important;
+  margin-left: 2rem;
+}
+
+.checkout-row {
+  /* Các thuộc tính CSS cho hàng Row */
+}
+
+.checkout-sumary {
+  background: #eeeeee !important;
+}
+
+.checkout-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-summary-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.checkout-edit {
+  display: flex;
+  align-items: center;
+  color: #994499;
+  text-decoration: none;
+  margin-right: 1.5rem;
+}
+
+.checkout-edit:hover {
+  text-decoration: underline;
+}
+
+.checkout-table {
+  width: 90% !important;
+  margin: 0 auto;
+  border: none;
+}
+
+.checkout-table th,
+.checkout-table td {
+  border: none;
+  background: #eeeeee !important;
+}
+
+.checkout-table th.text-start,
+.checkout-table td.text-start {
+  text-align: left;
+}
+
+.checkout-table th.text-center,
+.checkout-table td.text-center {
+  text-align: center;
+}
+
+.checkout-table th.text-end,
+.checkout-table td.text-end {
+  text-align: right;
+}
+
+.checkout-total-label,
+.checkout-total-value {
+  font-size: 1.4rem;
+}
+
+.checkout-coupon-label {
+  font-size: 1.2rem;
+}
+
+.checkout-coupon-value {
+  color: green !important;
+}
