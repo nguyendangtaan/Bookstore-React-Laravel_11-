@@ -4,7 +4,6 @@ import AppRouter from "./router/router";
 // import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import "bootstrap/scss/bootstrap.scss";
 import { ToastContainer } from "react-toastify";
 import { persistor, store } from "./redux/store/index";
 import { Provider } from "react-redux";
