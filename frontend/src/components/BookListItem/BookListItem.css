@@ -1,4 +1,4 @@
-.book-card {
+.book-card-component {
   border: none !important;
   border-radius: 0 !important;
   text-align: left;
@@ -6,7 +6,7 @@
   height: 40rem !important;
 }
 
-.card-image {
+.card-image-component {
   height: 90%;
   display: flex;
   justify-content: center;
@@ -14,19 +14,19 @@
   overflow: hidden;
 }
 
-.book-card-img {
+.book-card-img-component {
   object-fit: cover;
   object-position: center;
   cursor: pointer;
 }
 
-.card-body {
+.card-body-component {
   padding-left: 0rem !important;
   padding-right: 0rem !important;
   padding-bottom: 0rem !important;
 }
 
-.book-card-title {
+.book-card-title-component {
   height: 3.06rem;
   font-size: 1.2rem !important;
   overflow: hidden;
@@ -38,22 +38,22 @@
   margin-top: -0.5rem;
 }
 
-.book-card-author {
+.book-card-author-component {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
   color: #000000;
   font-size: 1rem;
 }
 
-.book-card-rating {
+.book-card-rating-component {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
   font-size: 0.8rem;
 }
 
-.comment-icon,
-.star-icon {
+.comment-icon-component,
+.star-icon-component {
   width: 3rem;
   height: auto;
   margin-right: 0.5rem;
@@ -62,18 +62,18 @@
   margin-bottom: 0.5rem;
 }
 
-.star-icon {
+.star-icon-component {
   margin-left: 0.5rem;
 }
 
-.book-card-price {
+.book-card-price-component {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 0rem;
 }
 
 @media (max-width: 580px) {
-  .book-card-img {
+  .book-card-img-component {
     object-fit: cover;
     object-position: center;
     cursor: pointer;

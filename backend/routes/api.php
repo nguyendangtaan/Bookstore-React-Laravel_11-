@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\CouponController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\AuthorController;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,5 @@ Route::get('book/{book}/show', [BookController::class, 'show']);
 // user routes
 Route::post('user/register', [UserController::class, 'store']);
 Route::post('user/login', [UserController::class, 'auth']);
+Route::get('authors', [AuthorController::class, 'index']);
+Route::get('authordetail/{id}', [AuthorController::class, 'authorBook']);

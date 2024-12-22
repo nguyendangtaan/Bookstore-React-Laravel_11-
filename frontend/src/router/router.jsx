@@ -9,6 +9,8 @@ import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/Checkout/Checkout";
 import Profile from "../pages/UserProfile/Profile";
 import ChangePassword from "../pages/ChangePassword/ChangePassword";
+import AuthorDetail from "../pages/AuthorDetail/AuthorDetail";
+
 
 const AppRouter = () => {
   return (
@@ -34,10 +36,27 @@ const AppRouter = () => {
         />
         {/* Chi tiết sách */}
         <Route
+          path="book/:slug"
+          element={
+            <MainLayout>
+              <BookDetail />
+            </MainLayout>
+          }
+        />
+         <Route
           path="catalog/book/:slug"
           element={
             <MainLayout>
               <BookDetail />
+            </MainLayout>
+          }
+        />
+        {/* Chi tiết tác giả */}
+        <Route
+          path="authordetail/:id"
+          element={
+            <MainLayout>
+              <AuthorDetail/>
             </MainLayout>
           }
         />
