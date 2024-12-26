@@ -1,14 +1,13 @@
 import { useState, React,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
-import { FaRegStar } from "react-icons/fa";
+import { FaRegStar,FaComment, FaStar } from "react-icons/fa";
 import { GoComment } from "react-icons/go";
 import Image from "react-bootstrap/Image";
 import "./ProductInfo.css";
 import "./AuthorDetail.css";
 import axios from "axios";
-import BookListItem from "../../components/BookListItem/BookListItem";
 
 export default function AuthorDetail() {
   const { id } = useParams(); // Lấy giá trị id từ URL
@@ -113,7 +112,18 @@ export default function AuthorDetail() {
                 xl={3} // 4 columns on extra large screens
                 className="book-list-col"
               >
-                <BookListItem book={book} />
+                <Card key={book.book_id} className="book-card shadow-sm ">
+                <div className="bookImg"><Card.Img variant="top" src={book.thumbnail} alt={book.book_name}/></div>
+                <Card.Body className="Card-body">
+                 <div className="cardTittle"> <Card.Title>{book.book_name}</Card.Title></div>
+                 <div className="cardAuthor"></div> <Card.Text>{book.author_name}</Card.Text>
+                  <div className="card-details d-flex">
+                   <div className="comment"> <FaComment /> {book.book_qty}</div> 
+                   <div className="danhgia"><FaStar className="start"/> {book.page}</div>
+                  </div>
+                  <p className="price" style={{fontWeight:"bold"}}>{book.book_price}</p>
+                </Card.Body>
+              </Card>
               </Col>
             ))}
           </Row>

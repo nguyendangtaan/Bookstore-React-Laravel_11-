@@ -121,7 +121,7 @@ export default function Checkout() {
             </div>
             <div className="my-3">
               {user?.profile_completed ? (
-                <Link to="/" className="btn btn-primary rounded-0">
+                <Link to="/pay/order" className="btn btn-primary rounded-0">
                   Mua hàng
                 </Link>
               ) : (

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\CouponController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AuthorController;
 use App\Http\Resources\UserResource;
@@ -17,10 +18,11 @@ Route::middleware('auth:sanctum')->group(function(){
     });
     Route::post('user/logout', [UserController::class,'logout']);
     Route::put('user/profile/update', [UserController::class, 'UpdateUserProfile']);
-
     // Coupon route
     Route::post('apply/coupon', [CouponController::class, 'applyCoupon']);
-
+    //order routes
+    Route::post('store/order',[OrderController::class,'store']);
+    Route::post('pay/order',[OrderController::class,'payOrderByStripe']);
     // Đổi mật khẩu
     Route::put('user/change-password', [UserController::class, 'changePassword']);
 });

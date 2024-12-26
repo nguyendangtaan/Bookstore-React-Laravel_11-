@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,9 +12,7 @@ class Order extends Model
     protected $primaryKey = 'order_id';
     protected $fillable = [
         'total_price',
-        'order_address',
-        'payment_type',
-        'payment_status',
+        'qty',
         'delivered_at',
         'customer_id',
         'coupon_id'
@@ -28,11 +27,27 @@ class Order extends Model
         return $this->belongsTo(User::class, 'customer_id', 'customer_id');
     }
 
-    public function books(){
-        return $this->belongsToMany(Book::class);
-    }
+    public function books()
+{
+    return $this->belongsToMany(Book::class, 'book_orders', 'order_id', 'book_id');
+}
+
 
     public function coupon() {
         return $this->belongsTo(Coupon::class);
+    }
+    
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->diffForHumans();
+    }
+
+    public function getDeliveredAtAttribute($value)
+    {
+        if($value) {
+            return Carbon::parse($value)->diffForHumans();
+        }else {
+            return null;
+        }
     }
 }

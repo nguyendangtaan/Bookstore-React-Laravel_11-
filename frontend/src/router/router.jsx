@@ -10,6 +10,8 @@ import Checkout from "../pages/Checkout/Checkout";
 import Profile from "../pages/UserProfile/Profile";
 import ChangePassword from "../pages/ChangePassword/ChangePassword";
 import AuthorDetail from "../pages/AuthorDetail/AuthorDetail";
+import PayByStripe from "../pages/Checkout/PayByStripe";
+import UserOrder from "../pages/UserOrder/UserOrders";
 
 
 const AppRouter = () => {
@@ -104,6 +106,23 @@ const AppRouter = () => {
               <LoginSignup />
             </AuthLayout>
           }
+        />
+        {/* Thanh toán */}
+        <Route
+          path="/pay/order"
+          element={
+            <MainLayout>
+              <PayByStripe/>
+              </MainLayout>
+          }        
+        />
+        <Route
+          path="/user/orders"
+          element={
+            <MainLayout>
+              <UserOrder/>
+              </MainLayout>
+          }        
         />
       </Routes>
     </BrowserRouter>

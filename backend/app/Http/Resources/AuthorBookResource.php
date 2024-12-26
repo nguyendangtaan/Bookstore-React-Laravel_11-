@@ -25,17 +25,20 @@ class AuthorBookResource extends JsonResource
             'created_at' => $this->created_at->format('Y-m-d'),
             'books' => $this->books->map(function ($book) {
                 return [
-                    'book_id' => $book->id,
-                    'book_title' => $book->title,
-                    'book_slug' => $book->slug,
-                    'published_year' => $book->published_year,
-                    'genre_name' => $book->genre->name ?? null, // Kiểm tra quan hệ genre
-                    'book_img' => $book->book_img ? asset($book->book_img) : null,
-                    'book_desc' => $book->description,
+                    'book_id' => $book->book_id,
+                    'book_name' => $book->book_name,
+                    'slug' => $book->slug,
+                    'category' => $book->category,
+                    'language' => $book->language,
+                    'publish_year' => $book->publish_year,
+                    'page' => $book->page,
+                    'quantity' => $book->book_qty,
+                    'price' => $book->book_price,
+                    'desc' => $book->desc,
+                    'thumbnail' => $book->thumbnail ? asset($book->thumbnail) : null,
+                    'status' => $book->status,
                     'created_at' => $book->created_at->format('Y-m-d'),
                     'updated_at' => $book->updated_at->format('Y-m-d'),
-                    'rating' => $book->rating,
-                    'reviews_count' => $book->reviews_count,
                 ];
             }),
         ];

@@ -30,9 +30,12 @@ class Book extends Model
         return $this->belongsTo(Author::class, 'author_id', 'author_id');
     }
 
-    public function orders(){
-        return $this->belongsToMany(Order::class);
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'book_orders', 'book_id', 'order_id');
     }
+    
+
 
     public function reviews(){
     return $this->hasMany(Review::class, 'book_id', 'book_id')->with('customer')->where('approved', 1)->latest();
